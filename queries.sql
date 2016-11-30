@@ -6,7 +6,7 @@ INNER JOIN persona p
 on i.personadni = p.dni
 INNER JOIN rol r
 on r.idrol = i.idrol
-WHERE r.nombre_rol = 'Sospechoso'
+WHERE r.nombre_rol = 'Sospechoso';
 
 
 --2
@@ -33,7 +33,7 @@ WHERE id_ubicacion IN (
 		) as b
 	GROUP BY b.id_lugar
 	HAVING count(*) > 1
-)
+);
 --3
 SELECT
 	*
@@ -50,7 +50,7 @@ WHERE o.dni IN (
 	on c.idcaso = e.idcaso
 	GROUP BY o.dni
 	HAVING count(DISTINCT c.idcaso) > 1
-)
+);
 
 --4
 CREATE OR REPLACE FUNCTION sucesionEventos(inidcaso integer)
@@ -86,7 +86,7 @@ HAVING count(DISTINCT cr.idcaso) IN
 	GROUP BY o.dni
 	ORDER BY CasosResueltos desc
 	LIMIT 1
-)
+);
 
 --6
 -- Asumimos que la ubicacion que se busca es la actual, quiere decir al ultimo lugar movido
@@ -154,7 +154,7 @@ FROM categoria cat
 INNER JOIN caso c
 on c.id_categoria = cat.idcat
 GROUP BY cat.idcat, cat.nombre_cat
-ORDER BY CantidadCasos DESC
+ORDER BY CantidadCasos DESC;
 
 
 --9
