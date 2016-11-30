@@ -15,26 +15,29 @@ SELECT
 FROM persona
 WHERE id_ubicacion IN (
 	SELECT
-		u.id_lugar
-	FROM ubicacion u
-	INNER JOIN persona p
-	on p.id_ubicacion = u.id_lugar
-	INNER JOIN involucra i
-	on p.dni = i.personadni
-	INNER JOIN rol r
-	on i.idrol = r.idrol
-	WHERE r.nombre_rol = 'Sospechoso'
-	GROUP BY u.id_lugar
+		b.id_lugar
+	FROM
+		(
+			SELECT DISTINCT
+				u.id_lugar,
+				i.idcaso
+			FROM ubicacion u
+			INNER JOIN persona p
+			on p.id_ubicacion = u.id_lugar
+			INNER JOIN involucra i
+			on p.dni = i.personadni
+			INNER JOIN rol r
+			on i.idrol = r.idrol
+			WHERE r.nombre_rol = 'Sospechoso'
+			GROUP BY u.id_lugar, i.idcaso
+		) as b
+	GROUP BY b.id_lugar
 	HAVING count(*) > 1
 )
-
-
 --3
 SELECT
 	*
 FROM oficial o
-INNER JOIN persona p
-on o.dni = p.dni
 WHERE o.dni IN (
 	SELECT
 		dni
@@ -68,13 +71,22 @@ LANGUAGE sql;
 
 --5
 SELECT
-	o.dni,
-	count(o.dni) as CasosResueltos
+    o.dni
 FROM oficial o
 INNER JOIN caso_resuelto cr
 on cr.oficialresueltodni = o.dni
 GROUP BY o.dni
-ORDER BY count(o.dni) desc
+HAVING count(DISTINCT cr.idcaso) IN
+(
+	SELECT
+	    count(DISTINCT cr.idcaso) as CasosResueltos
+	FROM oficial o
+	INNER JOIN caso_resuelto cr
+	on cr.oficialresueltodni = o.dni
+	GROUP BY o.dni
+	ORDER BY CasosResueltos desc
+	LIMIT 1
+)
 
 --6
 -- Asumimos que la ubicacion que se busca es la actual, quiere decir al ultimo lugar movido
@@ -107,34 +119,29 @@ LANGUAGE sql;
 --7
 -- Asumimos que oficial involucrado incluye al que resolvio (si fue resuelto) y al principal
 CREATE OR REPLACE FUNCTION oficialesCaso(inidcaso integer)
-RETURNS TABLE(dni bigint)
+RETURNS TABLE(dni bigint, idservicio integer, iddepto integer, idrango integer, fecha_ingreso date, nroplaca integer, nro_escritorio integer)
 AS
 $BODY$
 SELECT
-	o.dni
+	o.*
 FROM oficial o
-WHERE o.dni IN
-	(SELECT
-		o.dni
-	FROM oficial o
-	INNER JOIN involucra i
-	on o.dni = i.personadni
-	WHERE i.idcaso = oficialesCaso.inidcaso
-	UNION
-	SELECT
-		o.dni
-	FROM oficial o
-	INNER JOIN caso_resuelto cr
-	on o.dni = cr.oficialresueltodni
-	WHERE cr.idcaso = oficialesCaso.inidcaso
-	UNION
-	SELECT
-		o.dni
-	FROM oficial o
-	INNER JOIN caso c
-	on o.dni = c.oficialprincipaldni
-	WHERE c.idcaso = oficialesCaso.inidcaso
-);
+INNER JOIN involucra i
+on o.dni = i.personadni
+WHERE i.idcaso = oficialesCaso.inidcaso
+UNION
+SELECT
+	o.*
+FROM oficial o
+INNER JOIN caso_resuelto cr
+on o.dni = cr.oficialresueltodni
+WHERE cr.idcaso = oficialesCaso.inidcaso
+UNION
+SELECT
+	o.*
+FROM oficial o
+INNER JOIN caso c
+on o.dni = c.oficialprincipaldni
+WHERE c.idcaso = oficialesCaso.inidcaso
 $BODY$
 LANGUAGE sql;
 
@@ -147,7 +154,7 @@ FROM categoria cat
 INNER JOIN caso c
 on c.id_categoria = cat.idcat
 GROUP BY cat.idcat, cat.nombre_cat
-ORDER BY count(c.idcaso) DESC
+ORDER BY CantidadCasos DESC
 
 
 --9

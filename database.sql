@@ -1,6 +1,7 @@
 CREATE TABLE calle (
   idcalle              serial  NOT NULL,
   nomcalle             varchar(50)  NOT NULL,
+  idloc                integer NOT NULL,
   CONSTRAINT pk_calle PRIMARY KEY ( idcalle )
  ) ;
 
@@ -344,6 +345,10 @@ COMMENT ON CONSTRAINT fk_involucra_caso ON involucra IS '';
 ALTER TABLE involucra ADD CONSTRAINT fk_involucra_rol FOREIGN KEY ( idrol ) REFERENCES rol( idrol )   ON UPDATE CASCADE DEFERRABLE INITIALLY DEFERRED;
 
 COMMENT ON CONSTRAINT fk_involucra_rol ON involucra IS '';
+
+ALTER TABLE calle ADD CONSTRAINT fk_calle_localidad FOREIGN KEY ( idloc ) REFERENCES localidad( idloc )   ON UPDATE CASCADE DEFERRABLE INITIALLY DEFERRED;
+
+COMMENT ON CONSTRAINT fk_calle_localidad ON calle IS '';
 
 ALTER TABLE localidad ADD CONSTRAINT fk_localidad_provincia FOREIGN KEY ( idprov ) REFERENCES provincia( idprov )   ON UPDATE CASCADE DEFERRABLE INITIALLY DEFERRED;
 
