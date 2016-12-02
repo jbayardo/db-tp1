@@ -1,0 +1,17 @@
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (10, 'Agente');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (1, 'Ayudante');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (11, 'Cabo');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (12, 'Cabo 1ª');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (6, 'Comisario');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (9, 'Comisario General');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (7, 'Comisario Inspector');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (8, 'Comisario Mayor');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (3, 'Inspector');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (4, 'Principal');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (13, 'Sargento');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (14, 'Sargento 1ª');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (5, 'Subcomisario');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (2, 'Subinspector');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (16, 'Suboficial Auxiliar');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (15, 'Suboficial Escribiente');
+INSERT INTO public.rango (idrango, nombre_rango) VALUES (17, 'Suboficial Mayor');

@@ -1,0 +1,1 @@
+INSERT INTO public.caso_descartado (idcaso, fecha_descarte, motivacion) VALUES (4, '2016-09-17', 'No valia la pena');

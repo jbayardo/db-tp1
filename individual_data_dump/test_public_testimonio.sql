@@ -1,0 +1,5 @@
+INSERT INTO public.testimonio (idtest, personadni, idcaso, oficialdni, texto, hora_test, fecha_test) VALUES (1, 1728642, 2, 261325, 'Yo creo que fue Mauro Cherubini el que pinto los slogans del ISIS en el baño del tercer piso de Exactas.', '01:57:51', '2016-09-17');
+INSERT INTO public.testimonio (idtest, personadni, idcaso, oficialdni, texto, hora_test, fecha_test) VALUES (2, 29709907, 1, 284146, 'Yo lo vi a Mauro Cherubini robarse los proyectores de los laboratorios de computación de Exactas.', '02:02:05', '2016-09-17');
+INSERT INTO public.testimonio (idtest, personadni, idcaso, oficialdni, texto, hora_test, fecha_test) VALUES (3, 396245, 10, 284146, 'No me parece.', '05:22:15', '2016-03-13');
+INSERT INTO public.testimonio (idtest, personadni, idcaso, oficialdni, texto, hora_test, fecha_test) VALUES (4, 396245, 9, 284146, 'Que se yo.', '02:54:01', '2016-01-11');
+INSERT INTO public.testimonio (idtest, personadni, idcaso, oficialdni, texto, hora_test, fecha_test) VALUES (5, 396245, 9, 284146, 'Que es la mente?.', '04:12:45', '2016-08-12');

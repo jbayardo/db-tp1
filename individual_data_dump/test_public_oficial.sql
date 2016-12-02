@@ -1,0 +1,3 @@
+INSERT INTO public.oficial (dni, idservicio, iddepto, idrango, fecha_ingreso, nroplaca, nro_escritorio) VALUES (261325, 2, 3, 2, '1990-08-24', 84, 2);
+INSERT INTO public.oficial (dni, idservicio, iddepto, idrango, fecha_ingreso, nroplaca, nro_escritorio) VALUES (284146, 1, 2, 1, '1990-08-24', 110, 1);
+INSERT INTO public.oficial (dni, idservicio, iddepto, idrango, fecha_ingreso, nroplaca, nro_escritorio) VALUES (383290, 3, 4, 3, '1990-08-24', 69, 3);

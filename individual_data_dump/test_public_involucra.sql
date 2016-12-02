@@ -1,0 +1,15 @@
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (4, 383290, 1);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (1, 29709907, 4);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (2, 1728642, 4);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (3, 1728642, 4);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (1, 284146, 8);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (2, 261325, 8);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (3, 261325, 8);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (4, 261325, 8);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (5, 350881, 5);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (6, 385023, 5);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (5, 1728642, 5);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (9, 396245, 4);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (10, 396245, 4);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (9, 284146, 8);
+INSERT INTO public.involucra (idcaso, personadni, idrol) VALUES (10, 284146, 8);

@@ -54,10 +54,11 @@ WHERE o.dni IN (
 
 --4
 CREATE OR REPLACE FUNCTION sucesionEventos(inidcaso integer)
-RETURNS TABLE( idcaso integer, personadni bigint, descripcion text, hora_evento time, fecha_evento date)
+RETURNS TABLE(idevento integer, idcaso integer, personadni bigint, descripcion text, hora_evento time, fecha_evento date)
 AS
 $BODY$
 SELECT
+	e.idevento,
 	e.idcaso,
 	e.personadni,
 	e.descripcion,
@@ -168,7 +169,6 @@ FROM testimonio t
 WHERE t.idcaso = testimoniosCaso.inidcaso;
 $BODY$
 LANGUAGE sql;
-
 
 --10a Si quieren todos los testimonios de cada caso
 CREATE OR REPLACE FUNCTION testimoniosCategoria(inidcat integer)

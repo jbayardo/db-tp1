@@ -1,0 +1,11 @@
+INSERT INTO public.participa (idcaso, personadni) VALUES (4, 383290);
+INSERT INTO public.participa (idcaso, personadni) VALUES (1, 29709907);
+INSERT INTO public.participa (idcaso, personadni) VALUES (2, 1728642);
+INSERT INTO public.participa (idcaso, personadni) VALUES (3, 1728642);
+INSERT INTO public.participa (idcaso, personadni) VALUES (1, 284146);
+INSERT INTO public.participa (idcaso, personadni) VALUES (2, 261325);
+INSERT INTO public.participa (idcaso, personadni) VALUES (3, 261325);
+INSERT INTO public.participa (idcaso, personadni) VALUES (4, 261325);
+INSERT INTO public.participa (idcaso, personadni) VALUES (5, 350881);
+INSERT INTO public.participa (idcaso, personadni) VALUES (6, 385023);
+INSERT INTO public.participa (idcaso, personadni) VALUES (5, 1728642);

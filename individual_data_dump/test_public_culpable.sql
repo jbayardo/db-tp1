@@ -1,0 +1,1 @@
+INSERT INTO public.culpable (idcaso, personadni) VALUES (2, 238767);

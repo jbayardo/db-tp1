@@ -1,0 +1,3 @@
+INSERT INTO public.evidencia (idevidencia, idcaso, fecha_sellado, hora_sellado, descripcion, fecha_ingreso, fecha_hallazgo, hora_hallazgo) VALUES (1, 2, null, null, 'Liquid Paper', '2016-09-17', '2016-09-17', '01:56:51');
+INSERT INTO public.evidencia (idevidencia, idcaso, fecha_sellado, hora_sellado, descripcion, fecha_ingreso, fecha_hallazgo, hora_hallazgo) VALUES (2, 3, null, null, 'Faso', '2016-09-17', '2016-09-17', '01:57:06');
+INSERT INTO public.evidencia (idevidencia, idcaso, fecha_sellado, hora_sellado, descripcion, fecha_ingreso, fecha_hallazgo, hora_hallazgo) VALUES (3, 2, null, null, 'Bomba', '2016-09-17', '2016-09-17', '01:57:23');

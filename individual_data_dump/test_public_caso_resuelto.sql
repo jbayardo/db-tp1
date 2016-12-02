@@ -1,0 +1,3 @@
+INSERT INTO public.caso_resuelto (idcaso, desc_resolucion, fecha_resolucion, oficialresueltodni) VALUES (2, 'ISIS WACHINN', '2016-09-17', 383290);
+INSERT INTO public.caso_resuelto (idcaso, desc_resolucion, fecha_resolucion, oficialresueltodni) VALUES (8, 'Habia metido un cutucuchillo', '2016-10-17', 284146);
+INSERT INTO public.caso_resuelto (idcaso, desc_resolucion, fecha_resolucion, oficialresueltodni) VALUES (7, 'No habia muerto', '2016-11-17', 284146);
